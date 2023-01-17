@@ -16,7 +16,7 @@
 * sudo apt-get update
 * sudo apt-get install mysql-server
 * sudo wget https://download.virtualbox.org/virtualbox/6.1.36/virtualbox-6.1_6.1.36-152435~Ubuntu~focal_amd64.deb
-* "sudo dpkg -i virtualbox-6.1_6.1.36-152435~Ubuntu~focal_amd64.deb"
+* sudo dpkg -i virtualbox-6.1_6.1.36-152435~Ubuntu~focal_amd64.deb
 * sudo apt -f install
 * sudo dpkg -r virtualbox-6.1
 * history
