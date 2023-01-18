@@ -52,4 +52,11 @@ public class Farm<T> {
             }
         }
     }
+
+    public static void printAnimals() {
+        for (Animal animal :
+                animals) {
+            System.out.println(animal.toString());
+        }
+    }
 }
