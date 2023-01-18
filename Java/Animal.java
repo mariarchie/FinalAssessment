@@ -9,7 +9,6 @@ public class Animal {
         this.id = id;
         this.name = name;
         this.birthdate = birthdate;
-
     }
 
     public int getId() {
