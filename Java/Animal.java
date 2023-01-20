@@ -1,9 +1,13 @@
 package Java;
+
+import java.util.ArrayList;
+
 public class Animal {
 
     private int id;
     private String name;
     private String birthdate;
+    public ArrayList<String> commands = new ArrayList<>();
 
     public Animal(int id, String name, String birthdate) {
         this.id = id;
@@ -37,6 +41,18 @@ public class Animal {
 
     public void feed() {
         System.out.println(name + " сыт.");
+    }
+
+    public void addCommand(String command, Animal animal) {
+        if (!animal.commands.contains(command)) {
+            animal.commands.add(command);
+        }
+    }
+
+    public void showCommands(ArrayList<String>commands) {
+        for (String command: commands) {
+            System.out.println(command);
+        }
     }
 
     @Override

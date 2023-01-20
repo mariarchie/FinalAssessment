@@ -1,4 +1,7 @@
 package Java.Beasts;
+
+import java.util.ArrayList;
+
 import Java.Animal;
 
 public class Beast extends Animal implements Employable {
@@ -9,11 +12,11 @@ public class Beast extends Animal implements Employable {
         this.loadCapacity = loadCapacity;
     }
 
-    public int getLoadCapacity(){
+    public int getLoadCapacity() {
         return loadCapacity;
     }
 
-    public void setLoadCapacity(int loadCapacity){
+    public void setLoadCapacity(int loadCapacity) {
         this.loadCapacity = loadCapacity;
     }
 
@@ -23,8 +26,18 @@ public class Beast extends Animal implements Employable {
     }
 
     @Override
-    public String toString() {
-        return String.format("id: %d\nName: %s\nРожден: %s\nГрузоподъемность: %s\n", getId(), getName(), getBirthdate(), this.loadCapacity);
+    public void addCommand(String command, Animal animal) {
+        super.addCommand(command, animal);
     }
 
+    @Override
+    public void showCommands(ArrayList<String> commands) {
+        super.showCommands(commands);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("id: %d\nName: %s\nРожден: %s\nГрузоподъемность: %s\n", getId(), getName(), getBirthdate(),
+                this.loadCapacity);
+    }
 }

@@ -1,42 +1,30 @@
 package Java;
 
-import java.util.Scanner;
-
-import Java.Beasts.Camel;
-import Java.Beasts.Donkey;
-import Java.Pets.Cat;
-import Java.Pets.Dog;
+import java.io.FileInputStream;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class Main {
-    public static void main(String[] args) {
-
-        Farm<Animal> animalFarm = new Farm<>();
-
-        animalFarm.adopt(new Cat(1009, "Джимбо", "2009-12-12", true));
-        animalFarm.adopt(new Donkey(1019, "Дон", "2019-01-12", 12));
-        animalFarm.adopt(new Camel(1091, "Крем", "2016-07-15", 15));
-        animalFarm.adopt(new Dog(1209, "Рекс", "2018-07-15", false));
-
-        try {
-            while (true) {
-
-                Menu.showMainMenu();
-                try (
-                        Scanner sc = new Scanner(System.in)) {
-                    int i = sc.nextInt();
-                    switch (i) {
-                        case 1:
-                            Farm.printAnimals();
-                            break;
-                        case 2:
-                            Menu.printOnlyThisClass(animalFarm);
-                            break;
-                    }
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Try one more time");
+    static Logger LOGGER;
+    static {
+        try(FileInputStream ins = new FileInputStream("/Users/mariannaadekova/Desktop/GB/Attestation")){ 
+            LogManager.getLogManager().readConfiguration(ins);
+            LOGGER = Logger.getLogger(Main.class.getName());
+        }catch (Exception ignore){
+            ignore.printStackTrace();
         }
     }
 
+    public static void main(String[] args) {
+
+        try {
+            while (true) {
+                Menu menu = new Menu();
+                menu.start();
+            }
+
+        } catch (Exception e) {
+            System.out.println("Come back soon!");
+        }
+    }
 }
