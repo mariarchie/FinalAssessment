@@ -83,7 +83,7 @@ public class Menu {
             } else if (input == 3) {
                 System.out.println("Введите id животного, которого будем обучать команде: ");
                 int animalID = sc.nextInt();
-                
+
                 System.out.println("Какой команде будем обучать животное? ");
                 String inputCommand = sc.next();
                 System.out.println(
