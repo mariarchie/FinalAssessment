@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import Java.Beasts.Beast;
 
-public class BeastStorage implements Storage<Beast> {
+public class BeastFarm implements Farm<Beast> {
 
     ArrayList<Beast> beasts = new ArrayList<>();
 

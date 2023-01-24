@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import Java.Pets.Pet;
 
-public class PetStorage implements Storage<Pet> {
+public class PetFarm implements Farm<Pet> {
 
     ArrayList<Pet> pets = new ArrayList<>();
 

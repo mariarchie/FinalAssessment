@@ -1,6 +1,6 @@
 package Java;
 
-interface Storage<T> {
+interface Farm<T> {
 
     void addAnimal(T object);
 

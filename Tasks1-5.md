@@ -1,23 +1,20 @@
-* ls
-* cd final
-* cat > Домашние_животные
-* echo "Собаки, кошки, хомяки" >> Домашние_животные
-* cat > Вьючные_животные
-* echo "Лошади, верблюды, ослы" >> Вьючные_животные
-* cat > Домашние_животные Вьючные_животные > Животные
-* cat Животные
-* mv Животные Друзья_человека
+* cat > 'Домашние животные'
+Собаки, кошки, хомяки
+* cat > 'Вьючные животные'
+Лошади, верблюды, ослы
+* cat > 'Домашние животные' 'Вьючные животные' > 'Животные'
+* cat 'Животные'
+* mv 'Животные' 'Друзья человека'
 * mkdir newFinal
 * ls
 * mv Друзья_человека newFinal/
-* cd newFinal
+* cd newFinal/
 * ls
-* sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
-* sudo apt-get update
+* cd
+* sudo wget dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
 * sudo apt-get install mysql-server
-* sudo wget https://download.virtualbox.org/virtualbox/6.1.36/virtualbox-6.1_6.1.36-152435~Ubuntu~focal_amd64.deb
-* sudo dpkg -i virtualbox-6.1_6.1.36-152435~Ubuntu~focal_amd64.deb
-* sudo apt -f install
-* sudo dpkg -r virtualbox-6.1
+* sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+* sudo dpkg -i google-chrome-stable_current_amd64.deb
+* sudo apt autoremove --purge google-chrome-stable
 * history
 

@@ -14,14 +14,13 @@ public class Menu {
                         + "1. Завести новое животное" + "\n"
                         + "2. Увидеть список команд, которое выполняет животное" + "\n"
                         + "3. Обучить животное новым командам" + "\n"
-                        + "4. Выйти" + "\n");
+                        + "4. Выйти");
     }
 
     void start() {
         boolean end = false;
         while (!end) {
             showMainMenu();
-
             Scanner sc = new Scanner(System.in);
             int input = sc.nextInt();
             if (input == 1) {
@@ -59,13 +58,13 @@ public class Menu {
             if (input == 2) {
                 System.out.println("Команды какого животного Вы желаете посмотреть?(Введите id)");
                 int animalId = sc.nextInt();
-                PetStorage pstorage = new PetStorage();
+                PetFarm pstorage = new PetFarm();
                 for (int i = 0; i < pstorage.pets.size(); i++) {
                     if (pstorage.pets.get(i).getId() == animalId) {
                         pstorage.pets.get(i).showCommands(pstorage.pets.get(i).commands);
                     }
                 }
-                BeastStorage bstorage = new BeastStorage();
+                BeastFarm bstorage = new BeastFarm();
                 for (int i = 0; i < bstorage.beasts.size(); i++) {
                     if (bstorage.beasts.get(i).getId() == animalId) {
                         bstorage.beasts.get(i).showCommands(bstorage.beasts.get(i).commands);
@@ -80,14 +79,14 @@ public class Menu {
                 System.out.println("Какой команде будем обучать животное? ");
                 String inputCommand = sc.next();
 
-                PetStorage ptstorage = new PetStorage();
+                PetFarm ptstorage = new PetFarm();
                 for (int i = 0; i < ptstorage.pets.size(); i++) {
                     if (ptstorage.pets.get(i).getId() == animalID) {
                         ptstorage.pets.get(i).addCommand(inputCommand, ((Animal) (ptstorage.pets.get(i))));
                     }
                 }
 
-                BeastStorage bststorage = new BeastStorage();
+                BeastFarm bststorage = new BeastFarm();
                 for (int i = 0; i < bststorage.beasts.size(); i++) {
                     if (bststorage.beasts.get(i).getId() == animalID) {
                         bststorage.beasts.get(i).addCommand(inputCommand, ((Animal) (bststorage.beasts.get(i))));
@@ -100,6 +99,7 @@ public class Menu {
                 sc.close();
 
             } else {
+                end = true;
                 System.out.println("Wrong number");
                 sc.close();
             }
