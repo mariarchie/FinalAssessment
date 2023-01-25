@@ -1,8 +1,8 @@
-package Java;
+package JAVA;
 
 import java.util.ArrayList;
 
-import Java.Pets.Pet;
+import JAVA.Pets.Pet;
 
 public class PetFarm implements Farm<Pet> {
 

@@ -1,9 +1,9 @@
-package Java;
+package JAVA;
 
 import java.util.Scanner;
 
-import Java.Beasts.Beast;
-import Java.Pets.Pet;
+import JAVA.Beasts.Beast;
+import JAVA.Pets.Pet;
 
 public class Menu {
 
@@ -17,6 +17,8 @@ public class Menu {
                         + "4. Выйти");
     }
 
+    private AnimalEnum stringType;
+
     void start() {
         boolean end = false;
         while (!end) {
@@ -24,35 +26,81 @@ public class Menu {
             Scanner sc = new Scanner(System.in);
             int input = sc.nextInt();
             if (input == 1) {
+                Animal.add();
                 System.out.println(
                         "Введите тип животного:" + "\n"
                                 + "1. Домашние" + "\n"
                                 + "2. Вьючные");
-                int type = sc.nextInt();
-                if (type == 1) {
+                int inputF = sc.nextInt();
+                if (inputF == 1) {
                     System.out.println("Введите id животного: ");
                     int id = sc.nextInt();
                     System.out.println("Введите имя животного: ");
                     String name = sc.next();
                     System.out.println("Введите дату рождения(YYYY-MM-DD): ");
                     String birthdate = sc.next();
+                    System.out.println("Введите тип животного (DOG/ CAT/ HAMSTER): ");
+                    String stringType = sc.next();
+                    switch (stringType.toLowerCase()) {
+                        case ("cat"):
+                            this.stringType = AnimalEnum.CAT;
+                            break;
+                        case ("dog"):
+                            this.stringType = AnimalEnum.DOG;
+                            break;
+                        case ("hamster"):
+                            this.stringType = AnimalEnum.HAMSTER;
+                            break;
+                        default:
+                            System.out.println("Type is incorrect");
+
+                    }
+                    AnimalEnum type = toAnimalEnum(stringType);
                     System.out.println("Животное является породистым?(True/False) ");
                     boolean thoroughbred = sc.nextBoolean();
-                    Pet aPet = new Pet(id, name, birthdate, thoroughbred);
-                    System.out.println(aPet);
+
+                    try (Pet aPet = new Pet(id, name, birthdate, type, thoroughbred)){
+                        System.out.println(aPet);
+                        System.out.println("Счетчик " + Animal.add());
+                    } catch (RuntimeException ignore) {
+                    }
+                    // Pet aPet = new Pet(id, name, birthdate, type, thoroughbred);
+                    // System.out.println(aPet);
+                    // System.out.println("Счетчик " + Animal.add());
                 }
-                if (type == 2) {
+                if (inputF == 2) {
                     System.out.println("Введите id животного: ");
                     int id = sc.nextInt();
                     System.out.println("Введите имя животного:");
                     String name = sc.next();
                     System.out.println("Введите дату рождения(YYYY-MM-DD): ");
                     String birthdate = sc.next();
+                    System.out.println("Введите тип животного (HORSE/ CAMEL/ DONKEY): ");
+                    String stringType = sc.next();
+                    switch (stringType.toLowerCase()) {
+                        case ("horse"):
+                            this.stringType = AnimalEnum.HORSE;
+                            break;
+                        case ("camel"):
+                            this.stringType = AnimalEnum.CAMEL;
+                            break;
+                        case ("donkey"):
+                            this.stringType = AnimalEnum.DONKEY;
+                            break;
+                        default:
+                            System.out.println("Type is incorrect");
+                    }
+                    AnimalEnum type = toAnimalEnum(stringType);
                     System.out.println("Введите грузоподъемность животного(kg): ");
                     int loadCapacity = sc.nextInt();
-                    Beast aBeast = new Beast(id, name, birthdate, loadCapacity);
-                    System.out.println(aBeast);
+                    
+                    try (Beast aBeast = new Beast(id, name, birthdate, type, loadCapacity)){
+                        System.out.println(aBeast);
+                        System.out.println("Счетчик " + Animal.add());
+                    } catch (RuntimeException ignore) {
+                    }
                 }
+            
             }
 
             if (input == 2) {
@@ -97,13 +145,11 @@ public class Menu {
             if (input == 4) {
                 end = true;
                 sc.close();
-
-            } else {
-                end = true;
-                System.out.println("Wrong number");
-                sc.close();
             }
-
         }
+    }
+
+    public static AnimalEnum toAnimalEnum(String thisType) {
+        return AnimalEnum.valueOf(thisType);
     }
 }

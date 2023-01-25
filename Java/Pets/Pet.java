@@ -1,13 +1,14 @@
-package Java.Pets;
+package JAVA.Pets;
 
 import java.util.ArrayList;
 
-import Java.Animal;
+import JAVA.Animal;
+import JAVA.AnimalEnum;
 
 public class Pet extends Animal implements Playable {
     boolean thoroughbred;
 
-    public Pet(int id, String name, String birthdate, boolean thoroughbred) {
+    public Pet(int id, String name, String birthdate, AnimalEnum type, boolean thoroughbred) {
         super(id, name, birthdate);
         this.thoroughbred = thoroughbred;
     }
@@ -38,7 +39,7 @@ public class Pet extends Animal implements Playable {
 
     @Override
     public String toString() {
-        return String.format("id: %d\nName: %s\nРожден: %s\nПородистый: %s\n", getId(), getName(), getBirthdate(),
+        return String.format("id: %d\nName: %s\nРожден: %s\nТип: %s\nПородистый: %s\n", getId(), getName(), getBirthdate(), getType(),
                 this.thoroughbred);
     }
 }

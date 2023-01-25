@@ -1,10 +1,17 @@
-package Java;
+package JAVA;
 
 import java.util.ArrayList;
 
-public class Animal {
+public class Animal implements AutoCloseable {
+
+    private static int count = 0;
+
+    public void close() {
+        System.out.println("Счетчик закрывается...");
+    }
 
     private int id;
+    private AnimalEnum type;
     private String name;
     private String birthdate;
     public ArrayList<String> commands = new ArrayList<>();
@@ -13,7 +20,12 @@ public class Animal {
         this.id = id;
         this.name = name;
         this.birthdate = birthdate;
+        count++;
     }
+
+    public static int add() {
+        return count;
+    } 
 
     public int getId() {
         return id;
@@ -57,7 +69,12 @@ public class Animal {
 
     @Override
     public String toString() {
-        return String.format("id: %d\nName: %s\nРожден: %s\n", this.id, this.name, this.birthdate);
+        return String.format("id: %d\nName: %s\nРожден: %s\nТип: %s", this.id, this.name, this.birthdate, type);
 
     }
+
+    public AnimalEnum getType() {
+        return type;
+    }
+
 }

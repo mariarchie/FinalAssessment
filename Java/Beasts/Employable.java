@@ -1,4 +1,4 @@
-package Java.Beasts;
+package JAVA.Beasts;
 
 interface Employable {
     void employ();

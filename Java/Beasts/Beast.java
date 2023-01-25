@@ -1,13 +1,14 @@
-package Java.Beasts;
+package JAVA.Beasts;
 
 import java.util.ArrayList;
 
-import Java.Animal;
+import JAVA.Animal;
+import JAVA.AnimalEnum;
 
 public class Beast extends Animal implements Employable {
     private int loadCapacity;
 
-    public Beast(int id, String name, String birthdate, int loadCapacity) {
+    public Beast(int id, String name, String birthdate, AnimalEnum type, int loadCapacity) {
         super(id, name, birthdate);
         this.loadCapacity = loadCapacity;
     }
@@ -37,7 +38,7 @@ public class Beast extends Animal implements Employable {
 
     @Override
     public String toString() {
-        return String.format("id: %d\nName: %s\nРожден: %s\nГрузоподъемность: %s\n", getId(), getName(), getBirthdate(),
+        return String.format("id: %d\nName: %s\nРожден: %s\nТип: %s\nГрузоподъемность: %s\n", getId(), getName(), getBirthdate(), getType(),
                 this.loadCapacity);
     }
 }

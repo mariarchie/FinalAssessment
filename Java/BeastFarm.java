@@ -1,8 +1,8 @@
-package Java;
+package JAVA;
 
 import java.util.ArrayList;
 
-import Java.Beasts.Beast;
+import JAVA.Beasts.Beast;
 
 public class BeastFarm implements Farm<Beast> {
 
