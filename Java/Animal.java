@@ -25,7 +25,7 @@ public class Animal implements AutoCloseable {
 
     public static int add() {
         return count;
-    } 
+    }
 
     public int getId() {
         return id;

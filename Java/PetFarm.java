@@ -15,4 +15,10 @@ public class PetFarm implements Farm<Pet> {
         }
     }
 
+    @Override
+    public void deleteAnimal(Pet aPet) {
+        if (!pets.isEmpty()) {
+            pets.remove(aPet);
+        }
+    }
 }
