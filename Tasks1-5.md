@@ -1,23 +1,34 @@
-* ls
-* cd final
-* cat > Домашние_животные
-* echo "Собаки, кошки, хомяки" >> Домашние_животные
-* cat > Вьючные_животные
-* echo "Лошади, верблюды, ослы" >> Вьючные_животные
-* cat > Домашние_животные Вьючные_животные > Животные
-* cat Животные
-* mv Животные Друзья_человека
+1. Используя команду cat в терминале операционной системы *Linux*, создать два файла Домашние животные (заполнив файл собаками, кошками, хомяками) и Вьючные животными заполнив файл Лошадьми, верблюдами и ослы), а затем объединить их. Просмотреть содержимое созданного файла. Переименовать файл, дав ему новое имя (Друзья человека).
+
+* cat > 'Домашние животные'
+Собаки, кошки, хомяки
+* cat > 'Вьючные животные'
+Лошади, верблюды, ослы
+* cat > 'Домашние животные' 'Вьючные животные' > 'Животные'
+* cat 'Животные'
+* mv 'Животные' 'Друзья человека'
+
+2. Создать директорию, переместить файл туда.
+
 * mkdir newFinal
 * ls
 * mv Друзья_человека newFinal/
-* cd newFinal
+* cd newFinal/
 * ls
-* sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
-* sudo apt-get update
+* cd
+
+3. Подключить дополнительный репозиторий *MySQL*. Установить любой пакет из этого репозитория.
+
+* sudo wget dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
 * sudo apt-get install mysql-server
-* sudo wget https://download.virtualbox.org/virtualbox/6.1.36/virtualbox-6.1_6.1.36-152435~Ubuntu~focal_amd64.deb
-* sudo dpkg -i virtualbox-6.1_6.1.36-152435~Ubuntu~focal_amd64.deb
-* sudo apt -f install
-* sudo dpkg -r virtualbox-6.1
+
+4. Установить и удалить deb-пакет с помощью dpkg. 
+
+* sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+* sudo dpkg -i google-chrome-stable_current_amd64.deb
+* sudo apt autoremove --purge google-chrome-stable
+
+5. Выложить историю команд в терминале ubuntu
+
 * history
 
