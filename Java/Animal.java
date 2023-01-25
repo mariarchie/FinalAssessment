@@ -49,8 +49,8 @@ public class Animal {
         }
     }
 
-    public void showCommands(ArrayList<String>commands) {
-        for (String command: commands) {
+    public void showCommands(ArrayList<String> commands) {
+        for (String command : commands) {
             System.out.println(command);
         }
     }

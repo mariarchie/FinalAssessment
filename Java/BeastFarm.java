@@ -15,17 +15,4 @@ public class BeastFarm implements Farm<Beast> {
         }
     }
 
-    @Override
-    public void deleteAnimal(Beast beast) {
-        if (!beasts.isEmpty()) {
-            beasts.remove(beast);
-        }
-    }
-
-    public void showPets(ArrayList<Beast> beasts) {
-        for (Beast beast : beasts) {
-            System.out.println(beast.getId());
-        }
-    }
-
 }

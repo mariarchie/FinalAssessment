@@ -27,12 +27,6 @@ public class Pet extends Animal implements Playable {
     }
 
     @Override
-    public String toString() {
-        return String.format("id: %d\nName: %s\nРожден: %s\nПородистый: %s\n", getId(), getName(), getBirthdate(),
-                this.thoroughbred);
-    }
-
-    @Override
     public void addCommand(String command, Animal animal) {
         super.addCommand(command, animal);
     }
@@ -42,4 +36,9 @@ public class Pet extends Animal implements Playable {
         super.showCommands(commands);
     }
 
+    @Override
+    public String toString() {
+        return String.format("id: %d\nName: %s\nРожден: %s\nПородистый: %s\n", getId(), getName(), getBirthdate(),
+                this.thoroughbred);
+    }
 }

@@ -15,17 +15,4 @@ public class PetFarm implements Farm<Pet> {
         }
     }
 
-    @Override
-    public void deleteAnimal(Pet pet) {
-        if (!pets.isEmpty()) {
-            pets.remove(pet);
-        }
-    }
-
-    public void showPets(ArrayList<Pet> pets) {
-        for (Pet pet : pets) {
-            System.out.println(pet.getId());
-        }
-    }
-
 }
