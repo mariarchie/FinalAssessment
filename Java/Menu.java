@@ -59,14 +59,12 @@ public class Menu {
                     System.out.println("Животное является породистым?(True/False) ");
                     boolean thoroughbred = sc.nextBoolean();
 
-                    try (Pet aPet = new Pet(id, name, birthdate, type, thoroughbred)){
+                    try (Pet aPet = new Pet(id, name, birthdate, type, thoroughbred)) {
                         System.out.println(aPet);
                         System.out.println("Счетчик " + Animal.add());
                     } catch (RuntimeException ignore) {
                     }
-                    // Pet aPet = new Pet(id, name, birthdate, type, thoroughbred);
-                    // System.out.println(aPet);
-                    // System.out.println("Счетчик " + Animal.add());
+
                 }
                 if (inputF == 2) {
                     System.out.println("Введите id животного: ");
@@ -93,14 +91,14 @@ public class Menu {
                     AnimalEnum type = toAnimalEnum(stringType);
                     System.out.println("Введите грузоподъемность животного(kg): ");
                     int loadCapacity = sc.nextInt();
-                    
-                    try (Beast aBeast = new Beast(id, name, birthdate, type, loadCapacity)){
+
+                    try (Beast aBeast = new Beast(id, name, birthdate, type, loadCapacity)) {
                         System.out.println(aBeast);
                         System.out.println("Счетчик " + Animal.add());
                     } catch (RuntimeException ignore) {
                     }
                 }
-            
+
             }
 
             if (input == 2) {
